@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Day In My Life</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .greeting {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Hello!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Agenda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Note</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Music</a>
+        </ul>
+    </div>
+</nav>
+
+<header class="container mt-4 mb-4">
+    <div class="row">
+        <div class="col-md-6">
+            <p class="greeting" id="greeting"></p>
+        </div>
+        <div class="col-md-6 text-right">
+            <p id="datetime"></p>
+        </div>
+    </div>
+</header>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://i.pinimg.com/564x/82/5d/7b/825d7bf2fa1da1cb0e79d968b4c75891.jpg" class="d-block w-100" alt="image">
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://i.pinimg.com/564x/4e/08/af/4e08afd426b36af700f935f06e0906d7.jpg" class="card-img-top" alt="image">
+                <div class="card-body">
+                    <h5 class="card-title">Agenda</h5>
+                    <p class="card-text">Cek semua agendamu disini!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://i.pinimg.com/564x/c9/8f/75/c98f750ea2240e3c677f95bae54a282e.jpg" class="card-img-top" alt="image">
+                <div class="card-body">
+                    <h5 class="card-title">Note</h5>
+                    <p class="card-text">Simpan semua catatanmu disini!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/1b/c2/24/1bc224466d2ad73fca19d54fdc5ddedb.jpg" class="card-img-top" alt="image">
+                <div class="card-body">
+                    <h5 class="card-title">Music</h5>
+                    <p class="card-text">Putar semua musik favoritmu!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container text-center">
+        <span class="text-muted">© 2024 A Day In My Life</span>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+
+    function updateDateTime() {
+        var now = new Date();
+        var hour = now.getHours();
+        var greeting = "";
+
+        if (hour < 12) {
+            greeting = "Good morning!";
+        } else if (hour < 18) {
+            greeting = "Good afternoon!";
+        } else {
+            greeting = "Good evening!";
+        }
+
+        document.getElementById("greeting").innerText = greeting;
+        document.getElementById("datetime").innerText = now.toLocaleString();
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+</script>
+</body>
+</html>
